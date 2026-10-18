@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-label="ALCO features">
+  <defs>
+    <linearGradient id="cardGlow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+    <linearGradient id="ftBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0620"/><stop offset="1" stop-color="#120d33"/></linearGradient>
+  </defs>
+  <rect width="1200" height="640" fill="url(#ftBg)" rx="18"/>
+  <text x="600" y="62" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="34" font-weight="800" fill="#ffffff" letter-spacing="2">Everything you need to ship</text>
+  <text x="600" y="96" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="17" fill="#9d97d6">Phase 1 foundation &#8212; hardened, metered, and ready to build on</text>
+  <g>
+          <rect x="40" y="130" width="340" height="210" rx="16" fill="#141233" stroke="#3d3670" stroke-width="1.5"/>
+          <rect x="40" y="130" width="340" height="210" rx="16" fill="none" stroke="url(#cardGlow)" stroke-width="2.5">
+            <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.5;1" dur="4.2s" begin="0.0s" repeatCount="indefinite"/></rect>
+          <g transform="translate(92 188)"><path d="M0 -16 L5 -5 L16 -5 L7 2 L10 13 L0 6 L-10 13 L-7 2 L-16 -5 L-5 -5 Z" fill="#fbbf24"/></g>
+          <text x="132" y="196" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">AI App Builder</text>
+          <text x="72" y="234" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#b9b3e6"><tspan x="72" dy="0">Prompt -> plan -> multi-file</tspan><tspan x="72" dy="24">code with validation, snapshots</tspan><tspan x="72" dy="24">&amp; safe live preview.</tspan></text>
+        </g><g>
+          <rect x="420" y="130" width="340" height="210" rx="16" fill="#141233" stroke="#3d3670" stroke-width="1.5"/>
+          <rect x="420" y="130" width="340" height="210" rx="16" fill="none" stroke="url(#cardGlow)" stroke-width="2.5">
+            <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.5;1" dur="4.2s" begin="0.7s" repeatCount="indefinite"/></rect>
+          <g transform="translate(472 188)"><path d="M0 -16 C7 -11 13 -9 17 -9 L17 1 C17 10 9 16 0 20 C-9 16 -17 10 -17 1 L-17 -9 C-13 -9 -7 -11 0 -16 Z" fill="none" stroke="#22d3ee" stroke-width="3"/></g>
+          <text x="512" y="196" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">Secure Sandbox</text>
+          <text x="452" y="234" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#b9b3e6"><tspan x="452" dy="0">Docker-isolated runs: no</tspan><tspan x="452" dy="24">network, capped CPU/RAM,</tspan><tspan x="452" dy="24">read-only root, 180 s kill</tspan></text>
+        </g><g>
+          <rect x="800" y="130" width="340" height="210" rx="16" fill="#141233" stroke="#3d3670" stroke-width="1.5"/>
+          <rect x="800" y="130" width="340" height="210" rx="16" fill="none" stroke="url(#cardGlow)" stroke-width="2.5">
+            <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.5;1" dur="4.2s" begin="1.4s" repeatCount="indefinite"/></rect>
+          <g transform="translate(852 188)"><circle cx="-7" cy="0" r="9" fill="none" stroke="#8b5cf6" stroke-width="3"/><line x1="2" y1="0" x2="17" y2="0" stroke="#8b5cf6" stroke-width="3"/><line x1="12" y1="0" x2="12" y2="6" stroke="#8b5cf6" stroke-width="3"/><line x1="16" y1="0" x2="16" y2="5" stroke="#8b5cf6" stroke-width="3"/></g>
+          <text x="892" y="196" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">BYO API Keys</text>
+          <text x="832" y="234" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#b9b3e6"><tspan x="832" dy="0">Your RelayModels key,</tspan><tspan x="832" dy="24">AES-256-GCM encrypted. Server</tspan><tspan x="832" dy="24">key is fallback only.</tspan></text>
+        </g><g>
+          <rect x="40" y="380" width="340" height="210" rx="16" fill="#141233" stroke="#3d3670" stroke-width="1.5"/>
+          <rect x="40" y="380" width="340" height="210" rx="16" fill="none" stroke="url(#cardGlow)" stroke-width="2.5">
+            <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.5;1" dur="4.2s" begin="2.0999999999999996s" repeatCount="indefinite"/></rect>
+          <g transform="translate(92 438)"><circle cx="-12" cy="-10" r="5" fill="#3b82f6"/><circle cx="-12" cy="10" r="5" fill="#3b82f6"/><circle cx="12" cy="0" r="5" fill="#22d3ee"/><path d="M-12 -5 L-12 5 M-7 8 C0 8 4 4 7 2" stroke="#8b9cf5" stroke-width="2.5" fill="none"/></g>
+          <text x="132" y="446" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">Git Versions</text>
+          <text x="72" y="484" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#b9b3e6"><tspan x="72" dy="0">Every generation is a git</tspan><tspan x="72" dy="24">commit. Roll back any version in</tspan><tspan x="72" dy="24">one click.</tspan></text>
+        </g><g>
+          <rect x="420" y="380" width="340" height="210" rx="16" fill="#141233" stroke="#3d3670" stroke-width="1.5"/>
+          <rect x="420" y="380" width="340" height="210" rx="16" fill="none" stroke="url(#cardGlow)" stroke-width="2.5">
+            <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.5;1" dur="4.2s" begin="2.8s" repeatCount="indefinite"/></rect>
+          <g transform="translate(472 438)"><path d="M-16 6 A16 16 0 0 1 16 6" fill="none" stroke="#fbbf24" stroke-width="3"/><line x1="0" y1="6" x2="9" y2="-6" stroke="#fff" stroke-width="3" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-14 0 6;14 0 6;-14 0 6" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite"/></line><circle cx="0" cy="6" r="3" fill="#fff"/></g>
+          <text x="512" y="446" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">Quotas &amp; Limits</text>
+          <text x="452" y="484" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#b9b3e6"><tspan x="452" dy="0">200k AI tokens/day, 10 sandbox</tspan><tspan x="452" dy="24">min/day, sliding-window rate</tspan><tspan x="452" dy="24">limits, admin controls.</tspan></text>
+        </g><g>
+          <rect x="800" y="380" width="340" height="210" rx="16" fill="#141233" stroke="#3d3670" stroke-width="1.5"/>
+          <rect x="800" y="380" width="340" height="210" rx="16" fill="none" stroke="url(#cardGlow)" stroke-width="2.5">
+            <animate attributeName="opacity" values="0;0.9;0" keyTimes="0;0.5;1" dur="4.2s" begin="3.5s" repeatCount="indefinite"/></rect>
+          <g transform="translate(852 438)"><rect x="-17" y="-13" width="34" height="24" rx="8" fill="none" stroke="#8b5cf6" stroke-width="3"/><path d="M-6 11 L-10 19 L-2 11 Z" fill="#8b5cf6"/><text x="0" y="4" text-anchor="middle" font-family="'Noto Sans Myanmar', 'Myanmar Text', 'Myanmar3', sans-serif" font-size="13" fill="#e6e1ff">မြ</text></g>
+          <text x="892" y="446" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">Myanmar-first</text>
+          <text x="832" y="484" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#b9b3e6"><tspan x="832" dy="0">Full Myanmar + English UI with</tspan><tspan x="832" dy="24">correct Unicode rendering, built</tspan><tspan x="832" dy="24">for Myanmar creators.</tspan></text>
+        </g>
+</svg>

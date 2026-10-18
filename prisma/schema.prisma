@@ -1,0 +1,292 @@
+// ALCO OS — M2 data model (PostgreSQL).
+// Auth tables follow better-auth's Prisma schema; product tables follow the
+// blueprint's 12-table data model. Ownership is enforced app-side in queries
+// (no Postgres RLS in M2): every user-owned table references "user".id.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── better-auth core tables ──────────────────────────────────────────────
+
+model User {
+  id            String    @id
+  name          String
+  email         String    @unique
+  emailVerified Boolean
+  image         String?
+  createdAt     DateTime
+  updatedAt     DateTime
+  sessions      Session[]
+  accounts      Account[]
+
+  profile       Profile?
+  projects      Project[]
+  conversations Conversation[]
+  agentRuns     AgentRun[]
+  sandboxRuns   SandboxRun[]
+  usageEvents   UsageEvent[]
+  deployments   Deployment[]
+  subscription  Subscription?
+  auditLogs     AuditLog[]
+  apiKeys       UserApiKey[]
+
+  @@map("user")
+}
+
+// ── BYO API keys (Phase 1 follow-up) ─────────────────────────────────────
+// Each user may store their own RelayModels-compatible API key, encrypted at
+// rest with APP_ENCRYPTION_KEY (AES-256-GCM, see src/lib/apikey-crypto.ts).
+// Only keyHint (last 4 chars) is ever shown in the UI.
+
+model UserApiKey {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  provider     String   @default("relaymodels")
+  encryptedKey String
+  keyHint      String // last 4 chars of the plaintext key
+  baseUrl      String? // optional per-user gateway override
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([userId, provider])
+  @@index([userId])
+  @@map("user_api_keys")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime
+  updatedAt DateTime
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime
+  updatedAt             DateTime
+
+  @@map("account")
+}
+
+model Verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+
+  @@map("verification")
+}
+
+// ── ALCO OS product tables (blueprint §6) ─────────────────────────────────
+
+model Profile {
+  id          String   @id @default(cuid())
+  userId      String   @unique
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  displayName String?
+  avatarUrl   String?
+  locale      String   @default("en")
+  role        String   @default("user") // user | admin
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("profiles")
+}
+
+model Project {
+  id           String           @id @default(cuid())
+  userId       String
+  user         User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name         String
+  description  String?
+  files        ProjectFile[]
+  versions     ProjectVersion[]
+  conversations Conversation[]
+  agentRuns    AgentRun[]
+  sandboxRuns  SandboxRun[]
+  deployments  Deployment[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@index([userId, updatedAt])
+  @@map("projects")
+}
+
+model ProjectFile {
+  id        String   @id @default(cuid())
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  path      String
+  content   String?
+  sizeBytes Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([projectId, path])
+  @@index([projectId])
+  @@map("project_files")
+}
+
+model ProjectVersion {
+  id          String   @id @default(cuid())
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  message     String?
+  snapshotRef String? // git commit sha / object-storage pointer
+  createdAt   DateTime @default(now())
+
+  @@index([projectId, createdAt])
+  @@map("project_versions")
+}
+
+model Conversation {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projectId String?
+  project   Project?  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  title     String?
+  messages  Message[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([userId, updatedAt])
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String // user | assistant | system
+  content        String
+  tokensUsed     Int?
+  createdAt      DateTime     @default(now())
+
+  @@index([conversationId, createdAt])
+  @@map("messages")
+}
+
+model AgentRun {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projectId String?
+  project   Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  type      String // planner | developer | designer | tester | reviewer
+  status    String // queued | running | succeeded | failed
+  input     String?
+  output    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, createdAt])
+  @@map("agent_runs")
+}
+
+model SandboxRun {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projectId  String?
+  project    Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  runtime    String // python3.12 | node22 | shell
+  code       String?
+  status     String // queued | running | succeeded | failed | timeout
+  stdout     String?
+  stderr     String?
+  exitCode   Int?
+  durationMs Int?
+  driver     String? // docker | local (M5)
+  snapshotRef String? // git sha that was executed (M5)
+  createdAt  DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@map("sandbox_runs")
+}
+
+model UsageEvent {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  kind           String // ai_tokens | browser_minutes | sandbox_seconds | storage_mb
+  quantity       Float
+  creditsCharged Float    @default(0)
+  model          String? // AI model id for ai_tokens events (M3+)
+  createdAt      DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@map("usage_events")
+}
+
+model Deployment {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  status    String // queued | building | live | failed | rolled_back
+  url       String?
+  buildLog  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([projectId, createdAt])
+  @@map("deployments")
+}
+
+model Subscription {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan           String   @default("free") // free | pro | team
+  status         String   @default("active")
+  creditsBalance Float    @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("subscriptions")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  entity    String?
+  entityId  String?
+  meta      Json?
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@map("audit_logs")
+}

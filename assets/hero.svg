@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-label="ALCO - AI Lab for Code Operations">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b0620"/><stop offset="0.55" stop-color="#171040"/><stop offset="1" stop-color="#0b0620"/>
+    </linearGradient>
+    <radialGradient id="orbV" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.55"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbC" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.4"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.5"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c4b5fd"/><stop offset="0.35" stop-color="#8b5cf6"/><stop offset="0.65" stop-color="#3b82f6"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pillGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#ffffff" opacity="0.10"/>
+    </pattern>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="38"/></filter>
+    <clipPath id="titleClip"><text x="600" y="228" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="150" font-weight="800" letter-spacing="14">ALCO</text></clipPath>
+  </defs>
+  <rect width="1200" height="480" fill="url(#bg)"/>
+  <rect width="1200" height="480" fill="url(#dots)"/>
+  <ellipse cx="220" cy="120" rx="230" ry="150" fill="url(#orbV)" filter="url(#soft)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;60 30;0 0" keyTimes="0;0.5;1" dur="18s" repeatCount="indefinite"/></ellipse>
+  <ellipse cx="980" cy="360" rx="260" ry="160" fill="url(#orbB)" filter="url(#soft)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;-70 -25;0 0" keyTimes="0;0.5;1" dur="22s" repeatCount="indefinite"/></ellipse>
+  <ellipse cx="640" cy="420" rx="300" ry="120" fill="url(#orbC)" filter="url(#soft)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;40 -20;0 0" keyTimes="0;0.5;1" dur="16s" repeatCount="indefinite"/></ellipse>
+  <g opacity="0.5">
+    <circle cx="1020" cy="150" r="150" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="6 14" opacity="0.7">
+      <animateTransform attributeName="transform" type="rotate" from="0 1020 150" to="360 1020 150" dur="40s" repeatCount="indefinite"/></circle>
+    <circle cx="1020" cy="150" r="105" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3 10" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="360 1020 150" to="0 1020 150" dur="30s" repeatCount="indefinite"/></circle>
+    <circle cx="180" cy="330" r="120" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6 14" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 180 330" to="360 180 330" dur="36s" repeatCount="indefinite"/></circle>
+  </g>
+  <path d="M0 -9 C1 -3.15 3.15 -1 9 0 C3.15 1 1 3.15 0 9 C-1 3.15 -3.15 1 -9 0 C-3.15 -1 -1 -3.15 0 -9 Z"
+      transform="translate(120 90)" fill="#fbbf24">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="4s" begin="0s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="4s" begin="0s" repeatCount="indefinite"/>
+    </path><path d="M0 -6 C1 -2.0999999999999996 2.0999999999999996 -1 6 0 C2.0999999999999996 1 1 2.0999999999999996 0 6 C-1 2.0999999999999996 -2.0999999999999996 1 -6 0 C-2.0999999999999996 -1 -1 -2.0999999999999996 0 -6 Z"
+      transform="translate(210 300)" fill="#22d3ee">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="5s" begin="1.2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="5s" begin="1.2s" repeatCount="indefinite"/>
+    </path><path d="M0 -8 C1 -2.8 2.8 -1 8 0 C2.8 1 1 2.8 0 8 C-1 2.8 -2.8 1 -8 0 C-2.8 -1 -1 -2.8 0 -8 Z"
+      transform="translate(1010 110)" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="4.5s" begin="0.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="4.5s" begin="0.6s" repeatCount="indefinite"/>
+    </path><path d="M0 -6 C1 -2.0999999999999996 2.0999999999999996 -1 6 0 C2.0999999999999996 1 1 2.0999999999999996 0 6 C-1 2.0999999999999996 -2.0999999999999996 1 -6 0 C-2.0999999999999996 -1 -1 -2.0999999999999996 0 -6 Z"
+      transform="translate(1090 320)" fill="#fbbf24">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="5.5s" begin="2s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="5.5s" begin="2s" repeatCount="indefinite"/>
+    </path><path d="M0 -5 C1 -1.75 1.75 -1 5 0 C1.75 1 1 1.75 0 5 C-1 1.75 -1.75 1 -5 0 C-1.75 -1 -1 -1.75 0 -5 Z"
+      transform="translate(720 52)" fill="#ffffff">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="3.5s" begin="0.9s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="3.5s" begin="0.9s" repeatCount="indefinite"/>
+    </path><path d="M0 -7 C1 -2.4499999999999997 2.4499999999999997 -1 7 0 C2.4499999999999997 1 1 2.4499999999999997 0 7 C-1 2.4499999999999997 -2.4499999999999997 1 -7 0 C-2.4499999999999997 -1 -1 -2.4499999999999997 0 -7 Z"
+      transform="translate(880 420)" fill="#22d3ee">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="6s" begin="1.7s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="6s" begin="1.7s" repeatCount="indefinite"/>
+    </path><path d="M0 -5 C1 -1.75 1.75 -1 5 0 C1.75 1 1 1.75 0 5 C-1 1.75 -1.75 1 -5 0 C-1.75 -1 -1 -1.75 0 -5 Z"
+      transform="translate(330 430)" fill="#8b5cf6">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="4.2s" begin="2.4s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="4.2s" begin="2.4s" repeatCount="indefinite"/>
+    </path><path d="M0 -8 C1 -2.8 2.8 -1 8 0 C2.8 1 1 2.8 0 8 C-1 2.8 -2.8 1 -8 0 C-2.8 -1 -1 -2.8 0 -8 Z"
+      transform="translate(60 380)" fill="#ffffff">
+      <animate attributeName="opacity" values="0;1;0.2;1;0" keyTimes="0;0.25;0.5;0.75;1" dur="5.2s" begin="0.3s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" additive="sum" values="0.6;1.15;0.8;1.1;0.6" keyTimes="0;0.25;0.5;0.75;1" dur="5.2s" begin="0.3s" repeatCount="indefinite"/>
+    </path><circle cx="140" cy="500" r="3" fill="#8b5cf6">
+      <animate attributeName="cy" values="500;500;240;240" keyTimes="0;0.1;0.9;1" dur="9s" begin="0.0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="0.0s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="140;158;122;140" keyTimes="0;0.33;0.66;1" dur="9s" begin="0.0s" repeatCount="indefinite"/>
+    </circle><circle cx="235" cy="500" r="4" fill="#22d3ee">
+      <animate attributeName="cy" values="500;500;180;180" keyTimes="0;0.1;0.9;1" dur="9s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="235;253;217;235" keyTimes="0;0.33;0.66;1" dur="9s" begin="0.9s" repeatCount="indefinite"/>
+    </circle><circle cx="330" cy="500" r="5" fill="#3b82f6">
+      <animate attributeName="cy" values="500;500;120;120" keyTimes="0;0.1;0.9;1" dur="9s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="330;348;312;330" keyTimes="0;0.33;0.66;1" dur="9s" begin="1.8s" repeatCount="indefinite"/>
+    </circle><circle cx="425" cy="500" r="3" fill="#fbbf24">
+      <animate attributeName="cy" values="500;500;240;240" keyTimes="0;0.1;0.9;1" dur="9s" begin="2.7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="2.7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="425;443;407;425" keyTimes="0;0.33;0.66;1" dur="9s" begin="2.7s" repeatCount="indefinite"/>
+    </circle><circle cx="520" cy="500" r="4" fill="#8b5cf6">
+      <animate attributeName="cy" values="500;500;180;180" keyTimes="0;0.1;0.9;1" dur="9s" begin="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="520;538;502;520" keyTimes="0;0.33;0.66;1" dur="9s" begin="3.6s" repeatCount="indefinite"/>
+    </circle><circle cx="615" cy="500" r="5" fill="#22d3ee">
+      <animate attributeName="cy" values="500;500;120;120" keyTimes="0;0.1;0.9;1" dur="9s" begin="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="615;633;597;615" keyTimes="0;0.33;0.66;1" dur="9s" begin="4.5s" repeatCount="indefinite"/>
+    </circle><circle cx="710" cy="500" r="3" fill="#3b82f6">
+      <animate attributeName="cy" values="500;500;240;240" keyTimes="0;0.1;0.9;1" dur="9s" begin="5.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="5.4s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="710;728;692;710" keyTimes="0;0.33;0.66;1" dur="9s" begin="5.4s" repeatCount="indefinite"/>
+    </circle><circle cx="805" cy="500" r="4" fill="#fbbf24">
+      <animate attributeName="cy" values="500;500;180;180" keyTimes="0;0.1;0.9;1" dur="9s" begin="6.3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="6.3s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="805;823;787;805" keyTimes="0;0.33;0.66;1" dur="9s" begin="6.3s" repeatCount="indefinite"/>
+    </circle><circle cx="900" cy="500" r="5" fill="#8b5cf6">
+      <animate attributeName="cy" values="500;500;120;120" keyTimes="0;0.1;0.9;1" dur="9s" begin="7.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="7.2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="900;918;882;900" keyTimes="0;0.33;0.66;1" dur="9s" begin="7.2s" repeatCount="indefinite"/>
+    </circle><circle cx="995" cy="500" r="3" fill="#22d3ee">
+      <animate attributeName="cy" values="500;500;240;240" keyTimes="0;0.1;0.9;1" dur="9s" begin="8.1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="8.1s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="995;1013;977;995" keyTimes="0;0.33;0.66;1" dur="9s" begin="8.1s" repeatCount="indefinite"/>
+    </circle><circle cx="1090" cy="500" r="4" fill="#3b82f6">
+      <animate attributeName="cy" values="500;500;180;180" keyTimes="0;0.1;0.9;1" dur="9s" begin="9.0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="9.0s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1090;1108;1072;1090" keyTimes="0;0.33;0.66;1" dur="9s" begin="9.0s" repeatCount="indefinite"/>
+    </circle><circle cx="1185" cy="500" r="5" fill="#fbbf24">
+      <animate attributeName="cy" values="500;500;120;120" keyTimes="0;0.1;0.9;1" dur="9s" begin="9.9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.15;0.85;1" dur="9s" begin="9.9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="1185;1203;1167;1185" keyTimes="0;0.33;0.66;1" dur="9s" begin="9.9s" repeatCount="indefinite"/>
+    </circle>
+  <text x="600" y="72" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="19" letter-spacing="10" fill="#fbbf24" font-weight="600">PHASE 1 &#183; AI APP BUILDER</text>
+  <text x="600" y="228" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="150" font-weight="800" letter-spacing="14" fill="url(#titleGrad)">ALCO</text>
+  <rect x="-260" y="110" width="220" height="140" fill="url(#shine)" clip-path="url(#titleClip)" opacity="0.9">
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 0;1720 0;1720 0" keyTimes="0;0.25;0.55;1" dur="6s" repeatCount="indefinite"/></rect>
+  <text x="600" y="282" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="30" letter-spacing="8" fill="#e6e1ff" font-weight="600">AI LAB FOR CODE OPERATIONS</text>
+  <text x="600" y="330" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="26" font-style="italic" fill="#b9b3e6">Think it. Build it. Launch it.</text>
+  <text x="600" y="368" text-anchor="middle" font-family="'Noto Sans Myanmar', 'Myanmar Text', 'Myanmar3', sans-serif" font-size="24" fill="#9d97d6">တွေးပါ။ တည်ဆောက်ပါ။ လွှင့်တင်ပါ။</text>
+  <rect x="430" y="398" width="340" height="2" fill="#8b5cf6" opacity="0.5"/>
+  <text x="600" y="428" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21"
+          letter-spacing="6" fill="#22d3ee" font-weight="600">PROMPT
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.000;0.040;0.160;0.200" dur="15.0s" repeatCount="indefinite"/>
+        </text><text x="600" y="428" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21"
+          letter-spacing="6" fill="#22d3ee" font-weight="600">PLAN
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.200;0.240;0.360;0.400" dur="15.0s" repeatCount="indefinite"/>
+        </text><text x="600" y="428" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21"
+          letter-spacing="6" fill="#22d3ee" font-weight="600">CODE
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.400;0.440;0.560;0.600" dur="15.0s" repeatCount="indefinite"/>
+        </text><text x="600" y="428" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21"
+          letter-spacing="6" fill="#22d3ee" font-weight="600">SANDBOX
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.600;0.640;0.760;0.800" dur="15.0s" repeatCount="indefinite"/>
+        </text><text x="600" y="428" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="21"
+          letter-spacing="6" fill="#22d3ee" font-weight="600">LAUNCH
+          <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.800;0.840;0.960;1.000" dur="15.0s" repeatCount="indefinite"/>
+        </text>
+  <g>
+    <rect x="958" y="26" width="216" height="40" rx="20" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="982" cy="46" r="6" fill="#34d399"><animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="1090" y="52" text-anchor="middle" font-family="ui-sans-serif, system-ui, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="15" fill="#d6f7ff" letter-spacing="1">LIVE &#183; alco.funapp.live</text>
+  </g>
+</svg>
